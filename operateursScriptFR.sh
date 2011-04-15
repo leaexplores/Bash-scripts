@@ -1,17 +1,27 @@
-# Written by Mathieu Rhéaume
-# Location Québec, Canada.
-# Date 5 Avril 2011
+###############################################################
+# Written by Mathieu Rhéaume				      #
+# Location Québec, Canada.				      #
+# Date 5 Avril 2011					      #
+###############################################################
 #!/bin/sh
-#Ceci est un petit script pour démontrer différents opérateurs
-#Various operators test scripts to show their usage.
-echo "Testing directories operators"
+###############################################################
+#Ceci est un petit script pour démontrer différents opérateurs#
+#Various operators test scripts to show their usage.	      #
+###############################################################
+#Fonctions voir plus bas pour le programme		      #
+###############################################################
+
+function directoryTest {
+echo "Test des opérateurs de répertoires"
 echo "Test de test -f /bof si le fichier existe"
 test -f /bof
 echo $?
 echo "Test de test -d /boot si le dossier existe"
 test -d /boot
 echo $?
-echo "=============================================================="
+}
+
+function chaineCaractereTest {
 echo "Test de comparaison de chaine de caractère"
 variable1="Hello"
 variable2="Awesome"
@@ -33,7 +43,9 @@ echo $?
 echo "Est-ce que variable1 est remplis?"
 test -z "$variable1"
 echo $?
-echo "=============================================================="
+}
+
+function comparaisonNombre {
 echo "Test de comparaison de nombres "
 echo "=============================================================="
 a=5
@@ -51,7 +63,9 @@ echo $?
 echo "Si b est plus petit ou équal à a"
 test $b -le $a
 echo $?
-echo "=============================================================="
+}
+
+function ifTest {
 echo "Test de comparaison avec IF"
 echo "ATTENTION ** Tout les test qui ont été réalisé au paravant"
 echo "ATTENTION ** Auraient pu être réalisé avec le IF comme l'exemple suivant"
@@ -69,3 +83,27 @@ then
 else
 	echo "Le résultat est : Beurk"
 fi
+}
+
+function entrePourContinuer {
+echo "=============================================================="
+echo "Appuyez sur entrée pour continuer."
+echo "=============================================================="
+read
+clear
+}
+
+# Début du programme
+clear
+directoryTest
+entrePourContinuer
+chaineCaractereTest 
+entrePourContinuer
+comparaisonNombre
+entrePourContinuer
+ifTest
+echo "=============================================================="
+echo "Fin du programme. Appuyez sur entrée pour quitter."
+echo "=============================================================="
+read
+clear
