@@ -11,3 +11,4 @@ All the scripts that requires root will use sudo to avoid to be forced to run th
 Description
 ------------
 uninstall_macports.sh - Uninstalls macports from it's default installation directory and removes all the software installed from macports.
+operateursScriptFR.sh - Test various operators if, else, test, variables
