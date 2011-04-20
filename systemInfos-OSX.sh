@@ -157,7 +157,7 @@ case $indMenu in
 	;;
 	3)
 	indMenuThird=0
-	while [ "$indMenuThird" != "8" ]
+	while [ "$indMenuThird" != "9" ]
 	do
 	clear
 	echo "System usage"
@@ -169,7 +169,8 @@ case $indMenu in
 	echo "5. Virtual memory usage."
 	echo "6. Users logged into the system."
 	echo "7. Process running ( Press Q to quit )"
-	echo "8. Return to the last menu."
+	echo "8. Kill a running process"
+	echo "9. Return to the last menu."
 	echo -n "Your choice : "
 	read indMenuThird
 	case $indMenuThird in
@@ -217,7 +218,16 @@ case $indMenu in
 		clear
 		ps aux | less
 		;;
-		8);;
+		8)
+		clear
+		echo -n "Enter the PID number to kill : "
+		read pidToKill
+		echo -n "Enter the state you want to kill the process. -15 ends the program normally, -9 kill ! : "
+		read pidStatus
+		kill $pidStatus $pidToKill
+		pressAKeyToContinue
+		;;
+		9);;
 		*)
 		clear
 		echo "Invalid choice"
