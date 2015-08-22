@@ -15,7 +15,14 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
- 
+Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
+
+
+" Awesome tabbing + button bar settingslet
+let g:airline#extensions#tabline#enabled = 1
+
+
 " This does what it says on the tin. It will check your file on open too, not
 " just on save.
 " " You might not want this, so just leave it out if you don't.
@@ -25,20 +32,6 @@ Plugin 'marijnh/tern_for_vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
-
 set t_Co=256
 syntax on
 set background=dark
